@@ -16,3 +16,4 @@ function triang (xx,yy,zz){
     if (x==y && x==z) return console.log("triangulo equilatero")
     if (x==y || x==z || z==y) console.log("triangulo isoceles")
 }
+
