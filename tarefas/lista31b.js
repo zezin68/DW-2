@@ -16,4 +16,34 @@ function triang (xx,yy,zz){
     if (x==y && x==z) return console.log("triangulo equilatero")
     if (x==y || x==z || z==y) console.log("triangulo isoceles")
 }
+function salario(x) {
+    let p, r, v
+    
+    if (0 <= x && x <= 400) {
+        p = 0.15
+        r = 0.15 * x
+        v = x + r
+    } else if (400.01 <= x && x <= 800) {
+        p = 0.12
+        r = 0.12 * x
+        v = x + r
+    } else if (800.01 <= x && x <= 1200) {
+        p = 0.10
+        r = 0.10 * x
+        v = x + r
+    } else if (1200.01 <= x && x <= 2000) {
+        p = 0.07
+        r = 0.07 * x
+        v = x + r
+    } else {
+        p = 0.04
+        r = 0.04 * x
+        v = x + r
+    }
+    
+    console.log(`Novo salario: ${v.toFixed(2)}
+Reajuste ganho: ${r.toFixed(2)}
+Em percentual: ${(p * 100).toFixed(0)} %`);
+}
 
+salario(400);
