@@ -1,5 +1,7 @@
 function quadrante(x,y){
     if (x==0 && y==0) return "origem";
+    if (x==0) return "eixo X"
+    if (y==0) return "eixo Y"
     if (x>= 0 && y >= 0) return "Q1"
     if (x<0 && y <0) return "Q3"
     if (x>=0 && y <0) return "Q4"
@@ -46,4 +48,12 @@ Reajuste ganho: ${r.toFixed(2)}
 Em percentual: ${(p * 100).toFixed(0)} %`);
 }
 
-salario(400);
+function revers(x){
+    let y = [...x.split("")]
+    y.reverse()
+    y = y.join("")
+    if (y == x){
+        return true
+    }
+    return false
+}
