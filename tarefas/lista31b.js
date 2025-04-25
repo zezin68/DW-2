@@ -57,4 +57,10 @@ function revers(x){
     }
     return false
 }
+<<<<<<< HEAD
 
+=======
+function salario (atual, reajuste = 1){
+    return (atual * reajuste)
+}
+>>>>>>> 1fe8a091aacc9db90dec6a40acb48be0dd53800f
