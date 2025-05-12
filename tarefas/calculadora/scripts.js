@@ -46,7 +46,12 @@ for(const elemento of btnBotoes){
     });
 }
 // Botões dos operadores
-
+for(const elemento of btnOperacoes){
+  if(elemento.innerHTML === "="){continue}
+  elemento.addEventListener("click", () => {
+  escolheOperador(calculadora, elemento.innerHTML)
+  });
+}
 /****************************************************************
  * Regras da aplicação
  ****************************************************************/
@@ -57,7 +62,7 @@ for(const elemento of btnBotoes){
  *  O elemento display é atualizado com o atributo operandoAtual
  */
 function atualizaDisplay(calculadora) {
-    bufferElemento.innerHTML = calculadora["operandoAnterior"]
+    bufferElemento.innerHTML = calculadora["operandoAnterior"] + calculadora["operador"]
     displayElemento.innerHTML = calculadora["operandoAtual"]
 }
 
@@ -92,7 +97,18 @@ function adicionaNumero(calculadora, numero) {
  * - armazenar o operador recebido por parâmetro no atributo operador do objeto calculadora.
  * - copiar operandoAtual para o operandoAnterior, deixando a calculadora preparada para receber o próximo número
  */
-function escolheOperador(calculadora, operador) {}
+function escolheOperador(calculadora, operador) {
+  if(calculadora.operandoAnterior != "" && calculadora.operandoAtual != ""){
+    executaCalculo(calculadora)
+    calculadora.operandoAnterior=""
+  }
+  if(calculadora.operandoAnterior == "" ){
+    calculadora["operador"] = operador;
+    calculadora.operandoAnterior = calculadora.operandoAtual;
+    calculadora.operandoAtual = ""
+  }
+  atualizaDisplay(calculadora)
+}
 
 /* A função recebe o objeto calculadora e executa o calculo
  * - Verificar a operação a ser executada
@@ -100,7 +116,15 @@ function escolheOperador(calculadora, operador) {}
  * - Atualizar os atributos operador, operandoAnterior e operandoAtual
  * - Atualizar o display
  */
-function executaCalculo(calculadora) {}
+function executaCalculo(calculadora) {
+  let b = parseFloat(calculadora.operandoAtual)
+  let a = parseFloat(calculadora.operandoAnterior)
+  if(calculadora.operador == "+" ){calculadora.operandoAtual = a+b }
+  if(calculadora.operador == "-" ){calculadora.operandoAtual = a-b}
+  if(calculadora.operador == "*"){calculadora.operandoAtual = a*b}
+  if(calculadora.operador == "÷"){calculadora.operandoAtual = a/b}
+
+}
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
