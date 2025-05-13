@@ -36,7 +36,11 @@ btnDelete.addEventListener("click", () => {
 
 // Botão de igual
 btnIgual.addEventListener("click", () => {
+  if(calculadora.operandoAtual==""){return}
   executaCalculo(calculadora);
+  calculadora.operandoAnterior=""
+  calculadora.operador=""
+  atualizaDisplay(calculadora)
 });
 
 // Botões dos números
@@ -107,6 +111,7 @@ function escolheOperador(calculadora, operador) {
     calculadora.operandoAnterior = calculadora.operandoAtual;
     calculadora.operandoAtual = ""
   }
+  if(calculadora.operandoAtual==""){calculadora.operador=operador}
   atualizaDisplay(calculadora)
 }
 
@@ -117,12 +122,13 @@ function escolheOperador(calculadora, operador) {
  * - Atualizar o display
  */
 function executaCalculo(calculadora) {
+  
   let b = parseFloat(calculadora.operandoAtual)
   let a = parseFloat(calculadora.operandoAnterior)
-  if(calculadora.operador == "+" ){calculadora.operandoAtual = a+b }
-  if(calculadora.operador == "-" ){calculadora.operandoAtual = a-b}
-  if(calculadora.operador == "*"){calculadora.operandoAtual = a*b}
-  if(calculadora.operador == "÷"){calculadora.operandoAtual = a/b}
+  if(calculadora.operador == "+" ){calculadora.operandoAtual = String(a+b) }
+  if(calculadora.operador == "-" ){calculadora.operandoAtual = String(a-b)}
+  if(calculadora.operador == "*"){calculadora.operandoAtual = String(a*b)}
+  if(calculadora.operador == "÷"){calculadora.operandoAtual = String(a/b)}
 
 }
 
