@@ -1,0 +1,41 @@
+body {
+    font-family: Arial;
+    line-height: 1.6;
+}
+
+.espec {
+    /* margin-bottom: 15px; */
+}
+.autor{
+    display: flex;
+    align-items: center;
+}
+textarea{
+    resize: none;
+    margin-left: 8px;
+}
+#autor{
+    padding: 8px;
+    padding-bottom: 0;
+}
+label {
+    font-weight: bold;
+}
+
+input, select {
+    width: 50%; /* Reduzindo a largura dos campos */
+    padding: 8px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

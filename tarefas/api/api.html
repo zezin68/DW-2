@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./api.css">
+</head>
+<body>
+    <h1>Formulario de ISBN</h1>
+    <form action="#" method="post">
+        <div class="geral espec">
+            <label for="isbn">ISBN</label>
+            <input type="number" name="isbn" id="isbn" placeholder="digite o isbn" required><button type="button" onclick="buscarISBN()">Enviar</button>
+        </div>
+        <div class="geral autor">
+            <label for="autor">Autor(es)</label>
+            <textarea name="autor" id="autor" required></textarea>
+        </div>
+        <div class="geral">
+            <label for="">Título</label>
+            <input type="text" name="titulo" id="titulo" placeholder="Digite o título" required>
+        </div>
+        <div class="geral">
+            <label for="">Ano</label>
+            <input type="text" name="ano" id="ano" placeholder="Digite o ano" required>
+        </div>
+
+    </form>
+    <script src="./api.js" ></script>
+</body>
+</html>
