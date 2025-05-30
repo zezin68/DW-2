@@ -1,0 +1,10 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background: linear-gradient(to right top, green, aqua,white);
+  overflow-x: hidden;
+}
+.app{
+  display: flex;
+}
