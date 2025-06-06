@@ -3,4 +3,20 @@
     display: flex;
     gap: 10px;
     padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.direc{
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 5px;
+}
+.bot{
+    color: rgb(244, 244, 245);
+    min-width: 50vw;
+    display:flex;
+    justify-content: center;
 }
